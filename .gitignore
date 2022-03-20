@@ -1,0 +1,16 @@
+#fabric
+/fabric/.gradle/
+/fabric/build/
+/fabric/run/
+
+#forge
+
+#vanilla
+/vanilla/build/
+/vanilla/run/
+
+#ide
+/.idea/
+/.gradle/
+
+

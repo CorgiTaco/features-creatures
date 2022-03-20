@@ -5,6 +5,45 @@ plugins {
 group 'com.github.retroPacifist'
 version '1.0-SNAPSHOT'
 
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        if (project.name != "vanilla") {
+            implementation(project(":vanilla")) {
+                transitive = false
+            }
+        }
+        compileOnly 'org.jetbrains:annotations:23.0.0'
+        compileOnly 'org.projectlombok:lombok:1.18.22'
+        annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.release = 17
+    }
+
+    sourceSets {
+        if (project.name != "vanilla") {
+            main {
+                java {
+                    srcDirs project(':vanilla').sourceSets.main.java.srcDirs
+                }
+                resources {
+                    srcDirs project(':vanilla').sourceSets.main.resources.srcDirs
+                }
+            }
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
