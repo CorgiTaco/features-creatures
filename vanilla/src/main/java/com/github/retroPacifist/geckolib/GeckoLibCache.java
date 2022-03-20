@@ -35,8 +35,8 @@ public final class GeckoLibCache {
     }
 
     public CompletableFuture<Void> reload(PreparableReloadListener.PreparationBarrier barrier, ResourceManager manager, ProfilerFiller filler, ProfilerFiller reloadFiller, Executor executor, Executor gameExecutor) {
-        Util.ifPresent(animations, Map::clear);
-        Util.ifPresent(models, Map::clear);
+        Util.ifFilled(animations, Map::clear);
+        Util.ifFilled(models, Map::clear);
         return CompletableFuture.allOf(
                 load(executor, manager, "animations", animation -> AnimationFileLoader.createAnimationFile(parser, animation, manager), animations::put),
                 load(executor, manager, "geo", geo -> {

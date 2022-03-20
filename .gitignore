@@ -4,6 +4,7 @@
 /fabric/run/
 
 #forge
+/forge/build/
 
 #vanilla
 /vanilla/build/
@@ -12,5 +13,4 @@
 #ide
 /.idea/
 /.gradle/
-
-
+/build/
