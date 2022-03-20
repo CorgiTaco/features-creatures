@@ -7,5 +7,4 @@ import org.slf4j.LoggerFactory;
 @UtilityClass
 public class GeckoLib {
     public final Logger LOGGER = LoggerFactory.getLogger("GeckoLib");
-
 }

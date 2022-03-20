@@ -15,12 +15,24 @@ subprojects {
         mavenCentral()
     }
 
+    repositories() {
+        maven {
+            url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        }
+    }
+
     dependencies {
         if (project.name != "vanilla" && project.name != "geckolib-core") {
             implementation(project(":vanilla")) {
                 transitive = false
             }
         }
+
+        if (project.name == "vanilla" || project.name == "fabric" || project.name == "forge") {
+            implementation 'com.eliotlash.molang:molang:18'
+            implementation 'com.eliotlash.mclib:mclib:18'
+        }
+
         compileOnly 'org.jetbrains:annotations:23.0.0'
         compileOnly 'org.projectlombok:lombok:1.18.22'
         annotationProcessor 'org.projectlombok:lombok:1.18.22'

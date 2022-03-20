@@ -1,7 +1,9 @@
 package com.github.retroPacifist.geckolib;
 
+import com.eliotlash.molang.MolangParser;
 import com.github.retroPacifist.featurescreatures.common.Util;
 import com.github.retroPacifist.geckolib.file.AnimationFile;
+import com.github.retroPacifist.geckolib.file.AnimationFileLoader;
 import com.google.common.base.Suppliers;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMaps;
@@ -27,6 +29,8 @@ public final class GeckoLibCache {
     @Getter
     private final Map<ResourceLocation, Object> models = Object2ObjectMaps.emptyMap();
 
+    private final MolangParser parser = new MolangParser();
+
     private GeckoLibCache() {
     }
 
@@ -34,11 +38,7 @@ public final class GeckoLibCache {
         Util.ifPresent(animations, Map::clear);
         Util.ifPresent(models, Map::clear);
         return CompletableFuture.allOf(
-                load(executor, manager, "animations", animation -> {
-
-                    return null;
-                }, animations::put),
-
+                load(executor, manager, "animations", animation -> AnimationFileLoader.createAnimationFile(parser, animation, manager), animations::put),
                 load(executor, manager, "geo", geo -> {
 
                     return null;

@@ -1,4 +1,5 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'java'
 }
@@ -17,6 +18,10 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    shadow(project(":vanilla"))
+    shadow 'com.eliotlash.molang:molang:18'
+    shadow 'com.eliotlash.mclib:mclib:18'
 }
 
 processResources {
@@ -47,4 +52,20 @@ loom {
 
 java {
     withSourcesJar()
+}
+
+jar {
+    dependsOn(shadowJar)
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}"}
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadow]
+    classifier "shadow"
+}
+
+remapJar {
+    input.set(shadowJar.archivePath)
 }
