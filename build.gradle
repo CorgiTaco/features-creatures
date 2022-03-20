@@ -16,7 +16,7 @@ subprojects {
     }
 
     dependencies {
-        if (project.name != "vanilla") {
+        if (project.name != "vanilla" && project.name != "geckolib-core") {
             implementation(project(":vanilla")) {
                 transitive = false
             }

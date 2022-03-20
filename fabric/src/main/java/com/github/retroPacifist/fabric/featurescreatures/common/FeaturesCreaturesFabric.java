@@ -1,4 +1,4 @@
-package com.github.retroPacifist.featurescreatures.fabric.common;
+package com.github.retroPacifist.fabric.featurescreatures.common;
 
 import com.github.retroPacifist.featurescreatures.common.FeaturesCreatures;
 import com.github.retroPacifist.featurescreatures.common.registry.block.FeaturesCreaturesBlocks;

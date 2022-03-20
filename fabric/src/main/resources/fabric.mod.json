@@ -28,10 +28,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.retroPacifist.featurescreatures.fabric.common.FeaturesCreaturesFabric"
+      "com.github.retroPacifist.fabric.featurescreatures.common.FeaturesCreaturesFabric"
     ],
     "client": [
-      "com.github.retroPacifist.featurescreatures.fabric.client.FeaturesCreaturesFabricClient"
+      "com.github.retroPacifist.fabric.featurescreatures.client.FeaturesCreaturesFabricClient"
     ]
   },
   "mixins": [

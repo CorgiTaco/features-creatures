@@ -18,4 +18,5 @@ rootProject.name = 'features-creatures'
 include 'vanilla'
 include 'fabric'
 include 'forge'
+include 'geckolib-core'
 

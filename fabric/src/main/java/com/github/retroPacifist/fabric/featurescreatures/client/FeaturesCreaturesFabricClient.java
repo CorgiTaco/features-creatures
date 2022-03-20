@@ -1,4 +1,4 @@
-package com.github.retroPacifist.featurescreatures.fabric.client;
+package com.github.retroPacifist.fabric.featurescreatures.client;
 
 import net.fabricmc.api.ClientModInitializer;
 
