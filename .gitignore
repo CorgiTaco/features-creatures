@@ -9,4 +9,6 @@
 /quilt/build/
 /quilt/run/
 
-
+/fabric/.gradle/
+/fabric/build/
+/fabric/run/

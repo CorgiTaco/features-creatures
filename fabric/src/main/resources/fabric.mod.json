@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "features_and_creatures",
+  "version": "${version}",
+
+  "name": "Features and Creatures",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "retroPacifist"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/features-creatures",
+    "sources": "https://github.com/retroPacifist/features-creatures"
+  },
+
+  "license": "GNU",
+  "icon": "assets/features_and_creatures/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.retroPacifist.fc.common.FeaturesAndCreaturesFabric"
+    ],
+    "client": [
+      "com.github.retroPacifist.fc.client.FeaturesAndCreaturesFabricClient"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
