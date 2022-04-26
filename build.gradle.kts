@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm")
+    kotlin("jvm") version "1.6.21"
 }
 
 group = "com.github.retroPacifist"
@@ -9,11 +9,12 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib"))
 }
 
 allprojects {
     apply {
-        plugin("kotlin")
+        plugin("org.jetbrains.kotlin.jvm")
         plugin("java")
     }
 
@@ -22,6 +23,13 @@ allprojects {
     }
 
     dependencies {
-        implementation(kotlin("stdlib"))
+    }
+}
+
+subprojects {
+
+    dependencies {
+        if (project.name != "common")
+            implementation(project(":common"))
     }
 }
