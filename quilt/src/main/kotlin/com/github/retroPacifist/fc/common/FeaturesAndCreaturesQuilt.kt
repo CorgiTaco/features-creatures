@@ -6,5 +6,6 @@ import org.quiltmc.qsl.base.api.entrypoint.ModInitializer
 class FeaturesAndCreaturesQuilt: ModInitializer {
 
     override fun onInitialize(mod: ModContainer) {
+        FeaturesAndCreatures.register()
     }
 }
