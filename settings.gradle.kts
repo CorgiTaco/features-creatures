@@ -12,3 +12,6 @@ pluginManagement {
 
 rootProject.name = "features-creatures"
 include("shared")
+include("quilt")
+include("forge")
+include("fabric")
